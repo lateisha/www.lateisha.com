@@ -1,0 +1,114 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    meta(http-equiv="x-ua-compatible" content="ie=edge")
+    script(src="js/vendor.min.js")
+    //link(rel="stylesheet" href="http://basehold.it/26/ff0000")
+    link(rel="stylesheet" type="text/css" href="css/application.min.css")
+    link(rel="icon" type="image/x-icon" href="images/favicon.ico")
+    title LaTeisha Moore
+  body.bg-primary
+    .container-fluid
+      .row
+        .col-md-12
+          .splash
+            .escher.hidden-sm-down(data-leftdown="true" data-rightup="true")
+              img.escher-content.img-responsive.center-block(src="images/logo.png")
+            .hidden-md-up
+              img.img-responsive.center-block(src="images/logo.png")
+            br
+            h1.text-center.text-normal.text-lowercase Product + Design
+
+    .container-fluid.animated-bg.bg-primary
+      .animated-bg-wallpaper
+      .landing-card
+        .row.row-padded.bg-light
+          .col-lg-10.col-lg-offset-1.col-md-12
+            .col-md-6.text-primary
+              h1 Who I am 
+              p.lead Hello there. I'm LaTeisha, a self-taught product designer living in New York. I aim to use and further my visual design and UX skills to make products more human (and hopefully more fun!).
+              p.lead In a prior life, I worked at and voluntarily led several nonprofits, PM'd ad campaigns for some of the world's most iconic brands, and tapped influencers and experts for a few startups.
+            .col-md-6
+              .flip.bg-primary.text-center
+                .escher(data-leftup="true" data-rightdown="true")
+                  .flip-content.escher-content.center-block
+                    #carousel-facts.carousel.slide
+                      .carousel-inner
+                        .carousel-item.active
+                          img.img-responsive.center-block(src="images/photo.png")
+                        .carousel-item.flip-text
+                          h4.text-left.text-lowercase Found love in a karaoke bar
+                        .carousel-item.flip-text
+                          h4.text-left.text-lowercase Likes to dance dance dance
+                        .carousel-item.flip-text
+                          h4.text-left.text-lowercase Signed up for a marathon on a whim
+                        .carousel-item.flip-text
+                          h4.text-left.text-lowercase My name confuses strangers
+                        .carousel-item.flip-text
+                          h4.text-left.text-lowercase Grew up in Utah but have never skied
+                        .carousel-item.flip-text
+                          h4.text-left.text-lowercase Did a 30-day vegan challenge to make veggies a habit
+                        .carousel-item.flip-text
+                          h4.text-left.text-lowercase My venus fly trap costume was in the village voice
+                a.flip-control.flip-control-left
+                  h1.flip-control-icon
+                    i.fa.fa-angle-left
+                a.flip-control.flip-control-right
+                  h1.flip-control-icon
+                    i.fa.fa-angle-right
+              .text-center
+                h6.text-primary.text-lowercase Find fun facts behind the friendly face
+        .row.row-padded.bg-light
+          .col-lg-8.col-lg-offset-2.col-md-12
+            .col-md-12.text-primary
+              h1 What i do
+
+            .row.text-primary
+              .col-md-10.col-md-offset-1.sub-landing-card
+                .col-md-4.text-center
+                  h4.text-normal.text-uppercase
+                    img.center-block.img-responsive(src="images/multidevice.png")
+                    br
+                    | Websites + Mobile Apps
+                .col-md-4.text-center
+                  h4.text-normal.text-uppercase
+                    img.center-block.img-responsive(src="images/wearables.png")
+                    br
+                    | Wearables + Nearables
+                .col-md-4.text-center
+                  h4.text-normal.text-uppercase
+                    img.center-block.img-responsive(src="images/testlab.png")
+                    br
+                    | Research + Prototype
+            .row.text-primary
+              .col-md-12
+                h2.text-center
+                  | See my Work 
+                  br
+                  a(href="https://dribbble.com/lateisha" target="_blank")
+                    i.fa.fa-dribbble.text-dribbble
+                  | &nbsp;
+                  a(href="https://www.behance.net/lateisha" target="_blank")
+                    i.fa.fa-behance.text-behance
+
+
+        .row.bg-light
+          .col-md-12.text-primary
+            h3.lead.text-center.text-normal.no-margin
+              | I read my 
+              a.text-underline(href="mailto:sayhi@lateisha.com") email
+              |  and sometimes 
+              a.text-underline(href="https://twitter.com/lateisha" target="_blank") tweet
+              | .
+            .h3.lead.text-center.no-margin Do say, "hello!"
+
+        .row.row-footer
+          .col-md-12.text-light.text-center
+            span.lead.text-normal.overlay-primary
+              br
+              | Made with lots of 
+              img.inline-image.heart(src="images/heart.png")
+              |  in NY. 
+  script(src="js/application.min.js")

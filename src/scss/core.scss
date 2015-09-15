@@ -1,0 +1,219 @@
+@import "bootstrap_variables";
+@import "variables";
+@import "bootstrap";
+@import "fonts";
+
+// Utilities
+
+@include bg-variant('.bg-light', $brand-light);
+@include text-emphasis-variant('.text-light', $brand-light);
+
+@include bg-variant('.bg-behance', $brand-behance);
+@include text-emphasis-variant('.text-behance', $brand-behance);
+
+@include bg-variant('.bg-dribbble', $brand-dribbble);
+@include text-emphasis-variant('.text-dribbble', $brand-dribbble);
+
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+@function header-line-height($font-size, $line-height, $font-size-base) {
+  // font-size, line-height are in rems, 
+  @return strip-unit(ceil($font-size / $line-height) * $line-height) * $font-size-base;
+}
+
+.container-fluid {
+  padding-top: $spacer * 3;
+}
+
+.no-margin {
+  margin-bottom: 0 !important;
+}
+.overlay-primary {
+  background-color: rgba($brand-primary, 0.6);
+}
+.text-normal {
+  font-weight: 400;
+}
+.text-underline {
+  border-bottom: 3px solid;
+}
+
+// Vertical Rhythm
+
+h1, .h1 {
+  line-height: header-line-height($font-size-h1, $spacer, $font-size-base);
+}
+h2, .h2 {
+  line-height: header-line-height($font-size-h2, $spacer, $font-size-base);
+}
+h3, .h3 {
+  line-height: header-line-height($font-size-h3, $spacer, $font-size-base);
+}
+h4, .h4 {
+  line-height: header-line-height($font-size-h4, $spacer, $font-size-base);
+}
+h5, .h5 {
+  line-height: header-line-height($font-size-h5, $spacer, $font-size-base);
+}
+h6, .h6 {
+  line-height: header-line-height($font-size-h6, $spacer, $font-size-base);
+}
+.lead {
+  line-height: header-line-height($lead-font-size, $spacer, $font-size-base);
+  margin-bottom: $headings-margin-bottom;
+}
+
+// App
+.animated-bg {
+  overflow: hidden;
+  display: block;
+  padding-top: 0;
+  position: relative;
+  .animated-bg-wallpaper { 
+    width: $spacer * 77;
+    height: 100%;
+    position: absolute;
+    background-image: url('/images/background.png');
+    background-repeat: repeat;
+
+    animation-name: bg-stream;
+    animation-duration: #{$bg-stream-speed}s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+}
+
+@keyframes bg-stream {
+    0% {
+      transform: translate3d(0px, 0, 0);
+      -ms-transform: translate3d(0px, 0, 0);
+    }
+    100% {
+      transform: translate3d(-#{$bg-stream-length}px, 0, 0);
+      -ms-transform: translate3d(-#{$bg-stream-length}px, 0, 0);
+    }
+}
+@-webkit-keyframes bg-stream {
+    0% { -webkit-transform: translate3d(0px, 0, 0) }
+    100% { -webkit-transform: translate3d(-#{$bg-stream-length}px, 0, 0) }
+}
+.landing-card {
+  padding-top: $spacer * 3;
+  > .row {
+    padding-top: $spacer;
+    padding-bottom: $spacer;
+  }
+  > .row-padded {
+    margin-bottom: $spacer * 4;
+  }
+  > .row-footer {
+    padding-top: 0;
+  }
+
+  .sub-landing-card {
+    padding-top: $spacer;
+    img {
+      height: $spacer * 4;
+    }
+    margin-bottom: $spacer;
+  }
+}
+.splash {
+  .escher {
+    position: relative;
+  } 
+  img {
+    padding: $spacer;
+    height: $spacer * 7;
+  }
+  margin-bottom: $spacer * 5;
+}
+
+.flip {
+  $flip-height: 8;
+  @media (min-width: #{map-get($grid-breakpoints, 'sm')}) {
+    width: $spacer * 13;
+    margin: 0 auto;
+  }
+
+  position: relative;
+  padding: $spacer;
+  padding-top: $spacer + ($spacer / 2);
+  padding-bottom: $spacer + ($spacer / 2);
+  .escher {
+    height: $spacer * $flip-height;
+  }
+  .flip-control {
+
+    @media (min-width: #{map-get($grid-breakpoints, 'sm')}) {
+      background-color: $brand-light;
+    }
+    background-color: $brand-primary;
+
+    text-align: center;
+    position: absolute;
+    display: block;
+    padding: $spacer;
+    top: 0;
+    bottom: 0;
+    &:hover {
+      cursor: pointer;
+      @media (min-width: #{map-get($grid-breakpoints, 'sm')}) {
+        background-color: $brand-light;
+      }
+      background-color: $brand-primary;
+    }
+    &.flip-control-left {
+      left: 0; 
+      .flip-control-icon {
+        left: 25%;
+      }
+    }
+    &.flip-control-right {
+      right: 0; 
+      .flip-control-icon {
+        right: 25%;
+      }
+    }
+
+    .flip-control-icon {
+      display: inline-block;
+      position: absolute;
+      top: $spacer * ($flip-height) / 2;
+      @media (min-width: #{map-get($grid-breakpoints, 'sm')}) {
+        color: $brand-primary;
+      }
+      color: $brand-light
+    }
+  }
+
+  .flip-content {
+    display: inline-block;
+    height: $spacer * $flip-height;
+    img {
+      padding: 0;
+      height: $spacer * $flip-height;
+    }
+    .carousel-item {
+      width: $photo-width; 
+      height: $spacer * $flip-height;
+    }
+
+    .flip-text {
+      padding-top: $spacer / 2;
+      padding-left: $spacer / 2;
+      padding-right: $spacer;
+    }
+  }
+}
+
+.heart {
+  vertical-align: baseline;
+  height: 1rem;
+}

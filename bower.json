@@ -1,0 +1,23 @@
+{
+  "name": "www.lateisha.com",
+  "version": "0.1.0",
+  "homepage": "http://www.lateisha.com",
+  "authors": [
+    "Philip Reichenberger <preichenberger@philcolabs.com>"
+  ],
+  "description": "Website for www.lateisha.com",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap": "v4.0.0-alpha",
+    "react": "~0.13.3",
+    "font-awesome": "~4.4.0",
+    "slick-carousel": "~1.5.8"
+  }
+}
