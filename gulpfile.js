@@ -70,7 +70,7 @@ gulp.task('vendorjs', function() {
 });
 
 gulp.task('images', function() {
-  gulp.src('./images/**/*')
+  gulp.src('./src/images/**/*')
     .pipe(gulp.dest('./public/images/'));
 });
 
@@ -84,6 +84,8 @@ gulp.task('fonts', function() {
   ];
 
   gulp.src(vendorFiles)
+    .pipe(gulp.dest('./public/fonts/'));
+  gulp.src('./src/fonts/**/*')
     .pipe(gulp.dest('./public/fonts/'));
 });
 
